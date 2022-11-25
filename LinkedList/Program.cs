@@ -6,8 +6,9 @@
         {
             List list = new List();
             list.Add(56);
-            list.Insert_Last(30);
-            list.Insert_Last(70);
+            list.Add(70);
+            list.Display();
+            list.InsertAtParticularPosition(2, 30);
             list.Display();
 
 
