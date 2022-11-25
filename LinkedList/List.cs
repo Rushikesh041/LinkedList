@@ -87,6 +87,23 @@ namespace LinkedList
             newNode.next = null;
             return head;
         }
+        internal Node Search(int value)
+        {
+            int Count = 1;
+            while (head != null)
+            {
+                if (head.data == value)
+                {
+
+                    Console.WriteLine($"\nThe {value} is at Node : " + Count);
+
+                    return head;
+                }
+                head = head.next;
+                Count++;
+            }
+            return null;
+        }
         public void Display()
         {
 
@@ -106,5 +123,6 @@ namespace LinkedList
 
             }
         }
+        
     }
 }
