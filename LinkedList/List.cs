@@ -28,7 +28,7 @@ namespace LinkedList
             }
             Console.WriteLine($"{node.data} is Inserted in Linked List");
         }
-        internal Node InsertAtParticularPosition(int position, int data)
+        public Node InsertAtParticularPosition(int position, int data)
         {
             Node temp = head;
             if (position < 1)
@@ -61,7 +61,7 @@ namespace LinkedList
             Console.WriteLine("Inserted value is : " + data);
             return temp;
         }
-        internal Node RemoveFirstNode()
+        public Node RemoveFirstNode()
         {
             if (head == null)
             {
@@ -70,7 +70,7 @@ namespace LinkedList
             head = head.next;
             return head;
         }
-        internal Node RemoveLastNode()
+        public Node RemoveLastNode()
         {
             if (head == null)
             {
@@ -78,7 +78,7 @@ namespace LinkedList
             }
             if (head.next == null)
             {
-                return null;
+                return head = null;
             }
             Node newNode = head;
             while (newNode.next.next != null)
@@ -88,7 +88,7 @@ namespace LinkedList
             newNode.next = null;
             return head;
         }
-        internal Node Search(int value)
+        public Node Search(int value)
         {
             int Count = 1;
             Node temp = head;
@@ -105,6 +105,29 @@ namespace LinkedList
                 Count++;
             }
             return null;
+        }
+        public void DeleteNodeAtPerticularPosition(int position)
+        {
+            if (head == null)
+            {
+                return;
+            }
+            Node temp = head;
+            if (position == 1)
+            {
+                head = temp.next;
+                return;
+            }
+            for (int i = 1; temp != null && i < position - 1; i++)
+            {
+                temp = temp.next;
+            }
+            if (temp == null || temp.next == null)
+            {
+                return;
+            }
+            Node next1 = temp.next.next;
+            temp.next = next1;
         }
         public void Display()
         {
